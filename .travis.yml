@@ -3,6 +3,7 @@ sudo: required
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y 
+        libstdc++6
         build-essential
         git
         python2.7
