@@ -1,15 +1,18 @@
 language: bash
 sudo: required
 before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
   - sudo apt-get update
   - sudo apt-get install -y 
-        software-properties-common
+        gcc-4.9
         git
         python2.7
         nodejs
         cmake
         default-jre
         wget
+
+  - sudo apt-get upgrade libstdc++6
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
 install:
   # Get the emsdk repo
