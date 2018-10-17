@@ -6,11 +6,11 @@ before_install:
   - sudo apt-get install build-essential
   - sudo apt-get install -y
         libsecret-1-dev
- 	    libstdc++6
+        libstdc++6
         gcc-4.9
-	    g++-4.9
-	    gcc-4.9-multilib
-	    g++-4.9-multilib
+        g++-4.9
+        gcc-4.9-multilib
+        g++-4.9-multilib
         git
         python2.7
         nodejs
@@ -23,7 +23,7 @@ install:
   - git clone https://github.com/juj/emsdk.git
   # Enter that directory
   - cd emsdk
- 
+
   # Fetch the latest version of the emsdk (not needed the first time you clone)
   - git pull
   # Download and install the latest SDK tools.
