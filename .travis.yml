@@ -8,6 +8,7 @@ before_install:
   - sudo apt-get install libstdc++6
   - sudo apt-get install -y 
         gcc-4.9
+        g++-4.8
         git
         python2.7
         nodejs
