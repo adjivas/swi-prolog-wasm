@@ -12,8 +12,6 @@ addons:
       - libstdc++6
       - libstdc++
       - clang-4.0
-
-      - gcc-multilib
     env:
       - CXX_COMPILER="clang++-4.0"
       - STANDARD="c++14"
