@@ -1,16 +1,22 @@
-language: bash
+---
 sudo: required
+language: bash
+
+os: linux
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+  packages:
+      - g++-6
+  env:
+    - CXX_COMPILER="g++-6"
+    - STANDARD="c++14"
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update
   - sudo apt-get install build-essential
   - sudo apt-get install -y
-        libsecret-1-dev
-        libstdc++6
-        gcc-6
-        g++-6
-        gcc-6-multilib
-        g++-6-multilib
         git
         python2.7
         nodejs
