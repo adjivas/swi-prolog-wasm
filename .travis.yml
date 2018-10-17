@@ -7,10 +7,10 @@ before_install:
   - sudo apt-get install -y
         libsecret-1-dev
         libstdc++6
-        gcc-4.9
-        g++-4.9
-        gcc-4.9-multilib
-        g++-4.9-multilib
+        gcc-6
+        g++-6
+        gcc-6-multilib
+        g++-6-multilib
         git
         python2.7
         nodejs
