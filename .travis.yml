@@ -9,7 +9,7 @@ addons:
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-4.0
     packages:
-      - libstdc++
+      - libstdc++6
       - clang-4.0
     env:
       - CXX_COMPILER="clang++-4.0"
