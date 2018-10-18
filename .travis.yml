@@ -1,17 +1,8 @@
 ---
 sudo: required
 language: bash
-
+os: mac
 before_install:
-  - sudo apt-get update
-  - sudo apt-get -y install software-properties-common
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update
-  - sudo apt-get install -y gcc-5 g++-5 libstdc++6
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20
-  - sudo update-alternatives --config gcc
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20
-  - sudo update-alternatives --config g++
   - sudo apt-get install -y
         git
         python2.7
@@ -20,7 +11,10 @@ before_install:
         default-jre
         wget
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-  - ls /usr/lib/x86_64-linux-gnu/libstdc++*
+  - wget -c http://security.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5-base_5.4.0-6ubuntu1~16.04.9_amd64.deb
+  - sudo dpkg -i gcc-5-base_5.4.0-6ubuntu1~16.04.9_amd64.deb
+  - wget -c http://security.ubuntu.com/ubuntu/pool/main/g/gcc-5/libstdc++6_5.4.0-6ubuntu1~16.04.9_amd64.deb
+  - sudo dpkg -i libstdc++6_5.4.0-6ubuntu1~16.04.9_amd64.deb
 install:
   # Get the emsdk repo
   - git clone https://github.com/juj/emsdk.git
