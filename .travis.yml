@@ -7,7 +7,7 @@ before_install:
   - sudo apt-get -y install software-properties-common
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update
-  - sudo apt-get install -y gcc-5 g++-5
+  - sudo apt-get install -y gcc-5 g++-5 libstdc++6
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20
   - sudo update-alternatives --config gcc
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20
@@ -20,9 +20,6 @@ before_install:
         default-jre
         wget
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-  - sudo apt-get install -y ppa-purge
-  - wget http://launchpadlibrarian.net/253643699/libstdc++6_5.3.1-14ubuntu2_amd64.deb
-  - sudo dpkg --auto-deconfigure -i libstdc++6_5.3.1-14ubuntu2_amd64.deb
   - ls /usr/lib/x86_64-linux-gnu/libstdc++*
 install:
   # Get the emsdk repo
