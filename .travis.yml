@@ -5,12 +5,10 @@ os: mac
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install software-properties-common
+  - sudo add-apt-repository llvm-toolchain-trusty-5.0
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update
-  - sudo apt-get install -y gcc-6 g++-6
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 1
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 1
-  - sudo apt-get install -y libstdc++-7+dev
+  - sudo apt-get install -y clang-5.0 g++-7
   - sudo apt-get install -y
         git
         python2.7
