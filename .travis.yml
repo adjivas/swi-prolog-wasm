@@ -1,14 +1,18 @@
 ---
 sudo: required
 language: bash
-os: mac
+
+addons:
+  apt:
+    sources:
+      - llvm-toolchain-trusty-5.0
+      - ubuntu-toolchain-r-test
+    packages:
+      - clang-5.0
+      - g++-7
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install software-properties-common
-  - sudo add-apt-repository llvm-toolchain-trusty-5.0
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update
-  - sudo apt-get install -y clang-5.0 g++-7
   - sudo apt-get install -y
         git
         python2.7
