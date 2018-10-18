@@ -11,10 +11,12 @@ before_install:
         default-jre
         wget
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-  - wget -c http://security.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5-base_5.4.0-6ubuntu1~16.04.9_amd64.deb
-  - sudo dpkg -i gcc-5-base_5.4.0-6ubuntu1~16.04.9_amd64.deb
-  - wget -c http://security.ubuntu.com/ubuntu/pool/main/g/gcc-5/libstdc++6_5.4.0-6ubuntu1~16.04.9_amd64.deb
-  - sudo dpkg -i libstdc++6_5.4.0-6ubuntu1~16.04.9_amd64.deb
+
+  - sudo apt-get install -y gcc-5-base libstdc++6
+  - gcc --version
+  - whereis gcc
+  - ls /usr/bin
+  - ls /usr/lib/x86_64-linux-gnu/libstdc++*
 install:
   # Get the emsdk repo
   - git clone https://github.com/juj/emsdk.git
