@@ -21,7 +21,7 @@ before_install:
         wget
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
   - sudo apt-get install -y ppa-purge
-  - wget http://launchpadlibrarian.net/253643616/gcc-5_5.3.1-14ubuntu2_amd64.deb
+  - wget http://launchpadlibrarian.net/253643699/libstdc++6_5.3.1-14ubuntu2_amd64.deb
   - sudo dpkg --auto-deconfigure -i libstdc++6_5.3.1-14ubuntu2_amd64.deb
   - ls /usr/lib/x86_64-linux-gnu/libstdc++*
 install:
