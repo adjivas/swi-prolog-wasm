@@ -2,23 +2,9 @@
 sudo: required
 language: bash
 
-os: linux
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-4.0
-    packages:
-      - libstdc++6
-      - clang-4.0
-    env:
-      - CXX_COMPILER="clang++-4.0"
-      - STANDARD="c++14"
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update
-  - sudo apt-get install build-essential
-  - apt-cache show libc6 | grep Version
   - sudo apt-get install -y
         git
         python2.7
@@ -27,6 +13,11 @@ before_install:
         default-jre
         wget
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+  - sudo apt-get install -y ppa-purge
+  - sudo ppa-purge -y ppa:ubuntu-toolchain-r/test
+  - wget http://launchpadlibrarian.net/253658060/libstdc++6_5.3.1-14ubuntu2_arm64.deb
+  - dpkg --auto-deconfigure -i libstdc++6_5.3.1-14ubuntu2_arm64.deb
+  - ls /usr/lib/x86_64-linux-gnu/libstdc++*
 install:
   # Get the emsdk repo
   - git clone https://github.com/juj/emsdk.git
