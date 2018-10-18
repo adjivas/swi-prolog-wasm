@@ -3,6 +3,10 @@ sudo: required
 language: bash
 os: mac
 before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install software-properties-common
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update
   - sudo apt-get install -y
         git
         python2.7
@@ -11,8 +15,6 @@ before_install:
         default-jre
         wget
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get install -y gcc-5 g++-5 libstdc++6
   - gcc --version
   - whereis gcc
