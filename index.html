@@ -214,6 +214,7 @@ queens([C|Cs], Row0, [Col|Solution]) :-
 	  	// initialization and return to us a promise when it's done
 	  	wasm_bindgen('w_bg.wasm')
 	  	  .then(run)
+	    .catch(console.error);
         </script>
         <script src="dist/swipl-web.js"></script>
     </body>
