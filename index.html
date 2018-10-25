@@ -207,17 +207,18 @@ queens([C|Cs], Row0, [Col|Solution]) :-
 	<script src='w.js'></script>
 	
 	<script>
-	  // the `wasm_bindgen` global is set to the exports of the Rust module
-	  const { greet2 } = wasm_bindgen;
-	  // we'll defer our execution until the wasm is ready to go
-	  function run() {
-	      greet2('World');
-	  }
-	  // here we tell bindgen the path to the wasm file so it can run
-	  // initialization and return to us a promise when it's done
-	  wasm_bindgen('w_bg.wasm')
-	    .then(run)
-	    .catch(console.error);
-	</script>
+	document.addEventListener("DOMContentLoaded", function run() {
+	  	// the `wasm_bindgen` global is set to the exports of the Rust module
+	  	const { greet2 } = wasm_bindgen;
+	  	// we'll defer our execution until the wasm is ready to go
+	  	function run() {
+	  	    greet2('World');
+	  	}
+	  	// here we tell bindgen the path to the wasm file so it can run
+	  	// initialization and return to us a promise when it's done
+	  	wasm_bindgen('w_bg.wasm')
+	  	  .then(run)
+	});
+	</script> 
     </body>
 </html>
